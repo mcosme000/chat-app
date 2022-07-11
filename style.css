@@ -20,6 +20,7 @@ body {
   background-color: rgb(235, 235, 235);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   display: flex;
+  position: relative;
 }
 
 ul {
@@ -47,7 +48,10 @@ li {
 .profile-img-big {
   max-width: 80px;
   border-radius: 50%;
+  margin-right: 15px;
+  position: relative;
 }
+
 /* - - - CONTACTS- - - */
 
 .contacts-container {
@@ -62,6 +66,11 @@ li {
   justify-content: space-between;
   align-items: center;
   color: #fff;
+}
+
+.contact-card:hover {
+  background: rgb(68, 68, 250);
+  cursor: pointer;
 }
 
 .contact-info {
@@ -117,26 +126,84 @@ li {
   font-weight: 200;
 }
 
-.chat-header i {
+.chat-header li {
   color: grey;
   margin-left: 10px;
   font-size: 20px;
+  position: relative;
 }
 
+.chat-header li:hover {
+  color: rgb(60, 60, 226);
+  cursor: pointer;
+}
+
+/* - - - LIST OVERLAY - - - */
+.overlay {
+  display: none;
+  position: absolute;
+  top: 200%;
+  right: -30px;
+}
+.overlay li {
+  display: block;
+  font-size: 16px;
+  background: #efefef;
+  text-align: right;
+  background: #e3e3e3;
+  margin-bottom: 1px;
+  width: 160px;
+  padding: 15px 8px;
+}
+
+.overlay li:hover {
+  background: #d7d6d6;
+  color: #000;
+}
+
+.options:hover .overlay {
+  display: block;
+}
 /* - - - CHAT ROOM  - - - */
-. .message-cont {
+
+.chat-room {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  max-height: 500px;
+  padding: 10px;
+}
+.message-card {
   display: flex;
   padding: 10px;
   flex-wrap: wrap;
+}
+
+.align-right {
+  align-self: flex-end;
+  text-align: right;
 }
 
 .message {
   color: #fff;
   background: rgb(60, 60, 226);
   padding: 10px 15px;
+  margin-bottom: 8px;
   max-width: 300px;
+  flex-shrink: inherit;
   border-radius: 5px;
   box-shadow: rgba(128, 128, 128, 0.2) 0px 8px 24px;
+}
+
+.message-right {
+  background: whitesmoke;
+  color: #000;
+}
+
+.timestamp {
+  font-size: 14px;
+  color: grey;
+  font-weight: 200;
 }
 
 /* - - - CHAT FORM  - - - */
@@ -148,9 +215,11 @@ li {
 }
 
 input[type="text"] {
+  font-family: "Albert Sans", sans-serif;
   width: 85%;
   border: none;
   padding: 5px;
+  font-size: 16px;
 }
 
 .submit-btn {
@@ -170,4 +239,9 @@ input[type="text"] {
 
 .submit-btn:hover i {
   color: rgb(60, 60, 226);
+}
+
+/* - - - ACTIVE & HIDDEN CHATS - - - */
+.hidden-chat {
+  display: none;
 }
