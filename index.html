@@ -4,12 +4,129 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat APp</title>
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/8013b0f68f.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="app">
-      <div class="contacts-container"></div>
-      <div class="chat-container"></div>
+      <div class="left-container">
+        <!-- PROFILE -->
+        <div class="profile-container">
+          <div class="contact-card">
+            <img src="media/dog_01.jpg" alt="" class="profile-img-big" />
+            <h1 class="profile-name">Ponchan Wewe</h1>
+          </div>
+        </div>
+
+        <!-- CONTACTS -->
+        <div class="contacts-container">
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_01.jpg" alt="" class="profile-img" />
+              <p>Mom <span class="last-message">lunch is ready</span></p>
+            </div>
+            <p class="last-connect"></p>
+            <p class="last-connect">2 min ago</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_02.jpg" alt="" class="profile-img" />
+              <p>
+                Clarissa
+                <span class="last-message">
+                  Will reply later, I'm in the park now</span
+                >
+              </p>
+            </div>
+            <p class="last-connect">30min ago</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_03.jpg" alt="" class="profile-img" />
+              <p>Brenda</p>
+            </div>
+            <p class="last-connect">2 days ago</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_04.jpg" alt="" class="profile-img" />
+              <p>John<span class="last-message"> Hey I made poop!</span></p>
+            </div>
+            <p class="last-connect"></p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_05.jpg" alt="" class="profile-img" />
+              <p>John</p>
+            </div>
+            <p class="last-connect"></p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_06.jpg" alt="" class="profile-img" />
+              <p>John</p>
+            </div>
+            <p class="last-connect"></p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_07.jpg" alt="" class="profile-img" />
+              <p>John</p>
+            </div>
+            <p class="last-connect"></p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_08.jpg" alt="" class="profile-img" />
+              <p>John</p>
+            </div>
+            <p class="last-connect"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAT -->
+      <div class="chat-container">
+        <div class="chat-header">
+          <h1>Mum <span>Last seen 2 minutes ago</span></h1>
+          <ul>
+            <li><i class="fa fa-solid fa fa-phone"></i></li>
+            <li><i class="fa fa-solid fa fa-video"></i></li>
+          </ul>
+        </div>
+        <div class="chat-room">
+          <div class="message-cont msg-left">
+            <img src="media/profile_01.jpg" alt="" class="profile-img shadow" />
+            <div class="message">Lunch is rdy where are you</div>
+          </div>
+          <div class="message-cont msg-left">
+            <img src="media/profile_01.jpg" alt="" class="profile-img shadow" />
+            <div class="message">
+              Lunch is rdy where are youdsfehofij lskdjfoe ijsfoi lskdjfo
+            </div>
+          </div>
+          <div class="message-cont msg-right">
+            <img src="media/dog_01.jpg" alt="" class="profile-img shadow" />
+            <div class="message">
+              <p>Lunch is rdy</p>
+            </div>
+          </div>
+          <div class="message-cont msg-left"></div>
+          <div class="message-cont msg-right"></div>
+        </div>
+        <div class="chat-form">
+          <form action="">
+            <input type="text" placeholder="Type something here..." />
+            <button class="submit-btn" id="submit">
+              <i class="fa fa-solid fa fa-paw"></i>
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>
