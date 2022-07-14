@@ -204,11 +204,9 @@ li {
   padding: 10px 15px;
   margin-bottom: 8px;
   max-width: 300px;
-  flex-shrink: inherit;
   border-radius: 5px;
   box-shadow: rgba(128, 128, 128, 0.2) 0px 8px 24px;
 }
-
 .message-right {
   background: whitesmoke;
   color: #000;

@@ -1,5 +1,9 @@
 "use strict";
 
+// IMPORT DATA FROM EXTERNAL JS FILE//
+import data from "./data.js";
+console.log(data);
+
 // FORM THINGS //
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
@@ -35,4 +39,5 @@ const createMessage = (message) => {
   messageContainer.appendChild(newMessage);
   chatContainer.appendChild(messageCard);
   objDiv.scrollTop = objDiv.scrollHeight;
+  // responseMessage();
 };
