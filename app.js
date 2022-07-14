@@ -4,10 +4,14 @@
 import data from "./data.js";
 console.log(data);
 
+// LOOP THROUGH THE OBJECT
+
 // FORM THINGS //
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const chatContainer = document.getElementById("chatroom");
+const chatname = document.getElementById("chatname").innerHTML;
+console.log(chatname);
 
 // SET SCROLL BAR TO BOTTOM OF CHAT DIV
 var objDiv = document.getElementById("chatroom");
@@ -39,5 +43,10 @@ const createMessage = (message) => {
   messageContainer.appendChild(newMessage);
   chatContainer.appendChild(messageCard);
   objDiv.scrollTop = objDiv.scrollHeight;
-  // responseMessage();
+  getResponse();
+};
+
+//getting replies from the data object
+const getResponse = () => {
+  console.log(data[chatname.toLocaleLowerCase()]);
 };

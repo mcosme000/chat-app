@@ -18,8 +18,8 @@
         <div class="profile-container">
           <div class="contact-card profile">
             <div class="contact-info">
-              <img src="media/dog_01.jpg" alt="" class="profile-img-big" />
-              <h1 class="profile-name">Ponchan Wewe</h1>
+              <img src="media/profile_me.jpg" alt="" class="profile-img-big" />
+              <h1 class="profile-name">Pugginton</h1>
             </div>
             <i class="fa fa-solid fa fa-bars"></i>
           </div>
@@ -27,6 +27,7 @@
 
         <!-- CONTACTS -->
         <div class="contacts-container">
+          <!-- Contact 1 -->
           <div class="contact-card">
             <div class="contact-info">
               <img src="media/profile_01.jpg" alt="" class="profile-img" />
@@ -35,67 +36,83 @@
             <p class="last-connect"></p>
             <p class="last-connect">2 min ago</p>
           </div>
+
+          <!-- Contact 2 -->
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_03.jpg" alt="" class="profile-img" />
+              <p>
+                Sister S.<span class="last-message"
+                  >Have you seen my earpugs?</span
+                >
+              </p>
+            </div>
+            <p class="last-connect">3 hours ago</p>
+          </div>
+
+          <!-- Contact 3 -->
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_05.jpg" alt="" class="profile-img" />
+              <p>
+                John <span class="last-message">Have you seen my earpugs?</span>
+              </p>
+            </div>
+            <p class="last-connect">2 days ago</p>
+          </div>
+
+          <!-- Contact 4 -->
+          <div class="contact-card">
+            <div class="contact-info">
+              <img src="media/profile_04.jpg" alt="" class="profile-img" />
+              <p>
+                Robby
+                <span class="last-message">I wanna go to the park!</span>
+              </p>
+            </div>
+            <p class="last-connect">2 days ago</p>
+          </div>
+
+          <!-- Contact 5 -->
           <div class="contact-card">
             <div class="contact-info">
               <img src="media/profile_02.jpg" alt="" class="profile-img" />
               <p>
-                Clarissa
-                <span class="last-message">
-                  Will reply later, I'm in the park now</span
-                >
+                Dad
+                <span class="last-message"> ok</span>
               </p>
             </div>
             <p class="last-connect">30min ago</p>
           </div>
-          <div class="contact-card">
-            <div class="contact-info">
-              <img src="media/profile_03.jpg" alt="" class="profile-img" />
-              <p>Brenda</p>
-            </div>
-            <p class="last-connect">2 days ago</p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-info">
-              <img src="media/profile_04.jpg" alt="" class="profile-img" />
-              <p>John<span class="last-message"> Hey I made poop!</span></p>
-            </div>
-            <p class="last-connect"></p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-info">
-              <img src="media/profile_05.jpg" alt="" class="profile-img" />
-              <p>John</p>
-            </div>
-            <p class="last-connect"></p>
-          </div>
+
+          <!-- Contact 6 -->
           <div class="contact-card">
             <div class="contact-info">
               <img src="media/profile_06.jpg" alt="" class="profile-img" />
-              <p>John</p>
+              <p>
+                John <span class="last-message">Have you seen my earpugs?</span>
+              </p>
             </div>
-            <p class="last-connect"></p>
+            <p class="last-connect">2 days ago</p>
           </div>
+
+          <!-- Contact 7 -->
           <div class="contact-card">
             <div class="contact-info">
               <img src="media/profile_07.jpg" alt="" class="profile-img" />
-              <p>John</p>
+              <p>
+                Nanny <span class="last-message">I like this photo of you</span>
+              </p>
             </div>
-            <p class="last-connect"></p>
-          </div>
-          <div class="contact-card">
-            <div class="contact-info">
-              <img src="media/profile_08.jpg" alt="" class="profile-img" />
-              <p>John</p>
-            </div>
-            <p class="last-connect"></p>
+            <p class="last-connect">2 days ago</p>
           </div>
         </div>
       </div>
 
       <!-- CHAT (MUM) -->
-      <div class="chat-container actual-chat">
+      <div class="chat-container hidden-chat">
         <div class="chat-header">
-          <h1 id="chat-name">Mum <span>Last seen 2 minutes ago</span></h1>
+          <h1 id="chatname">Mom</h1>
           <ul>
             <li><i class="fa fa-solid fa fa-phone"></i></li>
             <li><i class="fa fa-solid fa fa-video"></i></li>
@@ -103,7 +120,7 @@
               <i class="fa fa-ellipsis-h"></i>
               <div class="overlay">
                 <ul>
-                  <li>Contact info.</li>
+                  <li id="contact">Contact info.</li>
                   <li>See contact photo</li>
                   <li>Silence chat</li>
                 </ul>
@@ -112,6 +129,7 @@
           </ul>
         </div>
         <div class="chat-room" id="chatroom">
+          <div class="day-break">Monday</div>
           <!--message-->
           <div class="message-card">
             <img
@@ -121,14 +139,15 @@
             />
             <div class="message-container">
               <div class="message">
-                <p>Lunch is rdy where are you</p>
+                <p>Good day today</p>
               </div>
               <div class="message">
-                <p>Lunch is rdy where are youuuuuuuuuuuuuuuu lskdjfoejsfkjd</p>
+                <p>😘😘😘</p>
               </div>
               <p class="timestamp">7/11 17:36</p>
             </div>
           </div>
+          <div class="day-break">Tuesday</div>
           <!--message-->
           <div class="message-card">
             <img
@@ -144,6 +163,8 @@
               <p class="timestamp">7/11 17:36</p>
             </div>
           </div>
+
+          <div class="day-break">Today</div>
           <!--message-->
           <div class="message-card">
             <img
@@ -152,9 +173,7 @@
               class="profile-img shadow"
             />
             <div class="message-container">
-              <div class="message">
-                Lunch is rdy where are youdsfehofij lskdjfoe ijsfoi lskdjfo
-              </div>
+              <div class="message">Lunch is ready</div>
               <p class="timestamp">7/11 17:40</p>
             </div>
           </div>
@@ -194,85 +213,104 @@
         </div>
       </div>
 
-      <!-- CHAT (brother)-->
+      <!-- CHAT (SIS)-->
       <div class="chat-container hidden-chat">
         <div class="chat-header">
-          <h1>Mum <span>Last seen 2 minutes ago</span></h1>
+          <h1 id="chatname">Sister S.</h1>
           <ul>
             <li><i class="fa fa-solid fa fa-phone"></i></li>
             <li><i class="fa fa-solid fa fa-video"></i></li>
+            <li class="options" id="options">
+              <i class="fa fa-ellipsis-h"></i>
+              <div class="overlay">
+                <ul>
+                  <li id="contact">Contact info.</li>
+                  <li>See contact photo</li>
+                  <li>Silence chat</li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </div>
-        <div class="chat-room" id="mum-chat">
+        <div class="chat-room" id="chatroom">
+          <div class="day-break">Monday</div>
           <!--message-->
           <div class="message-card">
             <img
-              src="media/profile_01.jpg"
+              src="media/profile_03.jpg"
               alt="contact avatar"
               class="profile-img shadow"
             />
             <div class="message-container">
-              <div class="message">Lunch is rdy where are you</div>
               <div class="message">
-                Lunch is rdy where are youuuuuuuuuuuuuuuu lskdjfoejsfkjd
+                <p>Good day today</p>
+              </div>
+              <div class="message">
+                <p>😘😘😘</p>
               </div>
               <p class="timestamp">7/11 17:36</p>
             </div>
           </div>
+          <div class="day-break">Tuesday</div>
           <!--message-->
           <div class="message-card">
             <img
-              src="media/profile_01.jpg"
+              src="media/profile_03.jpg"
               alt="contact avatar"
               class="profile-img shadow"
             />
             <div class="message-container">
-              <div class="message">Lunch is rdy where are you</div>
               <div class="message">
-                Lunch is rdy where are youuuuuuuuuuuuuuuu lskdjfoejsfkjd
+                Look! Brenda just sent me the photos she took me the other
+                day!!!!!
               </div>
+              <div class="message-photo">
+                <img
+                  src="./media/photo_01.jpg"
+                  alt=""
+                  class="top-left-radius"
+                />
+                <img
+                  src="./media/photo_02.jpg"
+                  alt=""
+                  class="top-right-radius"
+                />
+                <img src="./media/photo_03.jpg" alt="" class="bottom-radius" />
+              </div>
+              <div class="message">I love my new profile picture OMG</div>
               <p class="timestamp">7/11 17:36</p>
             </div>
           </div>
-          <!--message-->
-          <div class="message-card">
-            <img
-              src="media/profile_01.jpg"
-              alt="contact avatar"
-              class="profile-img shadow"
-            />
-            <div class="message-container">
-              <div class="message">
-                Lunch is rdy where are youdsfehofij lskdjfoe ijsfoi lskdjfo
-              </div>
-              <p class="timestamp">7/11 17:40</p>
-            </div>
-          </div>
-          <!--message-->
+
+          <!-- Message -->
           <div class="message-card align-right">
             <div class="message-container">
-              <div class="message message-right">
-                I am getting ready just wait!!!
-              </div>
+              <div class="message message-right">Why do you look french?</div>
               <p class="timestamp align-right">7/11 17:42</p>
             </div>
           </div>
+
+          <div class="day-break">Today</div>
           <!--message-->
           <div class="message-card">
             <img
-              src="media/profile_01.jpg"
+              src="media/profile_03.jpg"
               alt="contact avatar"
               class="profile-img shadow"
             />
             <div class="message-container">
-              <div class="message">Your father is gonna eat everything</div>
+              <div class="message">Have you seen my earpugs?</div>
               <p class="timestamp align-right">7/11 17:43</p>
             </div>
           </div>
         </div>
         <div class="chat-form">
           <form action="">
-            <input type="text" placeholder="Type something here..." />
+            <input
+              type="text"
+              placeholder="Type something here..."
+              id="input"
+            />
             <button class="submit-btn" id="submit">
               <i class="fa fa-solid fa fa-paw"></i>
             </button>
@@ -344,6 +382,111 @@
         <div class="chat-form">
           <form action="">
             <input type="text" placeholder="Type something here..." />
+            <button class="submit-btn" id="submit">
+              <i class="fa fa-solid fa fa-paw"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- CHAT (nanny) -->
+      <div class="chat-container actual-chat">
+        <div class="chat-header">
+          <h1 id="chatname">Nanny</h1>
+          <ul>
+            <li><i class="fa fa-solid fa fa-phone"></i></li>
+            <li><i class="fa fa-solid fa fa-video"></i></li>
+            <li class="options" id="options">
+              <i class="fa fa-ellipsis-h"></i>
+              <div class="overlay">
+                <ul>
+                  <li id="contact">Contact info.</li>
+                  <li>See contact photo</li>
+                  <li>Silence chat</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="chat-room" id="chatroom">
+          <div class="day-break">Monday</div>
+          <!--message-->
+          <div class="message-card">
+            <img
+              src="media/profile_07.jpg"
+              alt="contact avatar"
+              class="profile-img shadow"
+            />
+            <div class="message-container">
+              <div class="message">
+                <p>Good day today</p>
+              </div>
+              <div class="message">
+                <p>😘😘😘</p>
+              </div>
+              <p class="timestamp">7/11 17:36</p>
+            </div>
+          </div>
+          <div class="day-break">Tuesday</div>
+          <!--message-->
+          <div class="message-card">
+            <img
+              src="media/profile_07.jpg"
+              alt="contact avatar"
+              class="profile-img shadow"
+            />
+            <div class="message-container">
+              <div class="message">
+                Look! Brenda just sent me the photos she took me the other
+                day!!!!!
+              </div>
+              <div class="message-photo">
+                <img
+                  src="./media/photo_01.jpg"
+                  alt=""
+                  class="top-left-radius"
+                />
+                <img
+                  src="./media/photo_02.jpg"
+                  alt=""
+                  class="top-right-radius"
+                />
+                <img src="./media/photo_03.jpg" alt="" class="bottom-radius" />
+              </div>
+              <div class="message">I love my new profile picture OMG</div>
+              <p class="timestamp">7/11 17:36</p>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="message-card align-right">
+            <div class="message-container">
+              <div class="message message-right">Why do you look french?</div>
+              <p class="timestamp align-right">7/11 17:42</p>
+            </div>
+          </div>
+
+          <div class="day-break">Today</div>
+          <!--message-->
+          <div class="message-card">
+            <img
+              src="media/profile_07.jpg"
+              alt="contact avatar"
+              class="profile-img shadow"
+            />
+            <div class="message-container">
+              <div class="message">I like this photo of you</div>
+              <p class="timestamp align-right">7/11 17:43</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-form">
+          <form action="">
+            <input
+              type="text"
+              placeholder="Type something here..."
+              id="input"
+            />
             <button class="submit-btn" id="submit">
               <i class="fa fa-solid fa fa-paw"></i>
             </button>
