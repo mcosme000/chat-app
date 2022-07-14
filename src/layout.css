@@ -1,0 +1,21 @@
+/* - - -  
+ LAYOUT
+- - - */
+
+.app {
+  width: 80%;
+  height: 80%;
+  min-width: 900px;
+  margin: 50px auto;
+  background-color: rgb(235, 235, 235);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  display: flex;
+  position: relative;
+}
+
+.left-container {
+  width: 40%;
+  height: 100%;
+  background: rgb(60, 60, 226);
+  border-radius: 5px 0px 0px 5px;
+}

@@ -4,18 +4,28 @@
 import data from "./data.js";
 console.log(data);
 
-// LOOP THROUGH THE OBJECT
-
 // FORM THINGS //
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const chatContainer = document.getElementById("chatroom");
+
+// OTHER ELEMENTS //
 const chatname = document.getElementById("chatname").innerHTML;
-console.log(chatname);
+const contactCards = document.getElementsByClassName("contact-card");
+console.log(contactCards.length);
+
+// - - - - - ACTIONS - - - - - //
 
 // SET SCROLL BAR TO BOTTOM OF CHAT DIV
 var objDiv = document.getElementById("chatroom");
 objDiv.scrollTop = objDiv.scrollHeight;
+
+//clicking on each contact!
+for (let i = 0; i < contactCards.length; i++) {
+  contactCards[i].addEventListener("click", () => {
+    console.log(contactCards[i].getAttribute("id"));
+  });
+}
 
 //getting the input
 submit.addEventListener("click", (e) => {
