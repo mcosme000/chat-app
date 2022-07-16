@@ -1,10 +1,5 @@
 /* - - - CHAT - - - */
 
-.chat {
-  width: 60%;
-  height: 70%;
-  background: yellow;
-}
 .chat-container {
   width: 60%;
   border-radius: 0px 5px 5px 0px;
@@ -12,6 +7,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.chat-room {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 100%;
+  padding: 10px;
 }
 
 /* - - - CHAT HEADER  - - - */
@@ -42,14 +51,6 @@
 }
 
 /* - - - CHAT ROOM  - - - */
-
-.chat-room {
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  max-height: 500px;
-  padding: 10px;
-}
 
 .day-break {
   font-size: 12px;

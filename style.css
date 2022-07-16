@@ -58,6 +58,6 @@
 }
 
 /* - - - ACTIVE & HIDDEN CHATS - - - */
-.hidden-chat {
+.hidden {
   display: none;
 }

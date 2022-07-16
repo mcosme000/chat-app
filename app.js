@@ -8,11 +8,13 @@ console.log(data);
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 const chatContainer = document.getElementById("chatroom");
+const chatroom = document.getElementsByClassName("chat-room");
+console.log(chatroom);
 
 // OTHER ELEMENTS //
 const chatname = document.getElementById("chatname").innerHTML;
 const contactCards = document.getElementsByClassName("contact-card");
-console.log(contactCards.length);
+// console.log(contactCards.length);
 
 // - - - - - ACTIONS - - - - - //
 
@@ -20,12 +22,35 @@ console.log(contactCards.length);
 var objDiv = document.getElementById("chatroom");
 objDiv.scrollTop = objDiv.scrollHeight;
 
-//clicking on each contact!
+//Get the ID of each contact:
 for (let i = 0; i < contactCards.length; i++) {
   contactCards[i].addEventListener("click", () => {
-    console.log(contactCards[i].getAttribute("id"));
+    let contactId = contactCards[i].getAttribute("id");
+    console.log(contactId);
+    switchChat(contactId);
   });
 }
+
+//check if contactID and chatroomID are the same:
+const switchChat = (contactId) => {
+  //getting the attribute from each chat room
+  for (let i = 0; i < chatroom.length; i++) {
+    let chatId = chatroom[i].getAttribute("id");
+    chatId = chatId[chatId.length - 1];
+    if (contactId === chatId) {
+      chatroom[i].classList.add("hidden");
+      chatroom[contactId].classList.remove("hidden");
+    }
+  }
+  console.log(`Changing chat to chat nº${contactId}`);
+};
+
+// //change visibility of chatroom:
+// const visibility = () => {
+//   for (let i = 0; i < chatroom.length; i++) {
+//     chatroom[i].classList = "hidden";
+//   }
+// };
 
 //getting the input
 submit.addEventListener("click", (e) => {
@@ -52,6 +77,7 @@ const createMessage = (message) => {
   messageCard.appendChild(messageContainer);
   messageContainer.appendChild(newMessage);
   chatContainer.appendChild(messageCard);
+  // Fix scroll bar down
   objDiv.scrollTop = objDiv.scrollHeight;
   getResponse();
 };
