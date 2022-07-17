@@ -1,8 +1,8 @@
 "use strict";
 
 // IMPORT DATA FROM EXTERNAL JS FILE//
-import data from "./data.js";
-console.log(data);
+// import data from "./data.js";
+// console.log(data);
 
 // FORM THINGS //
 const input = document.getElementById("input");
@@ -10,6 +10,16 @@ const submit = document.getElementById("submit");
 const chatContainer = document.getElementById("chatroom");
 const chatroom = document.getElementsByClassName("chat-room");
 console.log(chatroom);
+
+//set the active chat
+
+let activeChat = 1;
+// function activeChat(n) {
+//   let active;
+//   n ? (active = n) : (active = 1);
+//   console.log(`active chat: ${active}`);
+//   return active;
+// }
 
 // OTHER ELEMENTS //
 const chatname = document.getElementById("chatname").innerHTML;
@@ -26,23 +36,43 @@ objDiv.scrollTop = objDiv.scrollHeight;
 for (let i = 0; i < contactCards.length; i++) {
   contactCards[i].addEventListener("click", () => {
     let contactId = contactCards[i].getAttribute("id");
-    console.log(contactId);
-    switchChat(contactId);
+    console.log(`Contact ID: ${contactId}`);
+    checkID(contactId);
+    //hasta aquí bien!!
   });
 }
 
+//*********element.classList.contains("")...
+
 //check if contactID and chatroomID are the same:
-const switchChat = (contactId) => {
+const checkID = (contactId) => {
   //getting the attribute from each chat room
   for (let i = 0; i < chatroom.length; i++) {
     let chatId = chatroom[i].getAttribute("id");
+
+    // to get the last element where the ID is:
     chatId = chatId[chatId.length - 1];
+
+    // Check if contactID and chatID are the same.
     if (contactId === chatId) {
-      chatroom[i].classList.add("hidden");
-      chatroom[contactId].classList.remove("hidden");
+      switchChat(contactId);
+      // chatroom[i].classList.add("hidden");
+      // chatroom[contactId].classList.remove("hidden");
     }
   }
-  console.log(`Changing chat to chat nº${contactId}`);
+};
+
+const switchChat = (number) => {
+  //first, I hide the active chat:
+  chatroom[activeChat - 1].classList.add("hidden");
+
+  //Second, I update the active chat:
+  chatroom[number - 1].classList.remove("hidden");
+
+  //update the active chat:
+  activeChat = number;
+
+  console.log(`Changing chat to chat nº${number}`);
 };
 
 // //change visibility of chatroom:
