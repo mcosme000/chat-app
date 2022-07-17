@@ -60,6 +60,19 @@
   align-self: center;
   padding: 3px 20px;
   border-radius: 10px;
+  margin-bottom: 8px;
+}
+
+.lost-call {
+  padding: 3px 30px;
+  background: rgb(251, 205, 205);
+  color: #000;
+  font-weight: bold;
+}
+
+.day-break i {
+  color: rgb(202, 23, 23);
+  margin-right: 10px;
 }
 .message-card {
   display: flex;
