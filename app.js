@@ -11,20 +11,14 @@ const chatContainer = document.getElementById("chatroom");
 const chatroom = document.getElementsByClassName("chat-room");
 console.log(chatroom);
 
-//set the active chat
-
-let activeChat = 1;
-// function activeChat(n) {
-//   let active;
-//   n ? (active = n) : (active = 1);
-//   console.log(`active chat: ${active}`);
-//   return active;
-// }
-
 // OTHER ELEMENTS //
-const chatname = document.getElementById("chatname").innerHTML;
+let chatname = document.getElementById("chatname");
 const contactCards = document.getElementsByClassName("contact-card");
-// console.log(contactCards.length);
+const contactNames = document.getElementsByClassName("contact-name");
+console.log(contactNames[contactNames.length - 1].innerHTML);
+
+//set the active chat
+let activeChat = 1;
 
 // - - - - - ACTIONS - - - - - //
 
@@ -39,10 +33,11 @@ for (let i = 0; i < contactCards.length; i++) {
     console.log(`Contact ID: ${contactId}`);
     checkID(contactId);
     //hasta aquí bien!!
+    // get the contact name:
+    console.log(contactCards[i]);
+    //
   });
 }
-
-//*********element.classList.contains("")...
 
 //check if contactID and chatroomID are the same:
 const checkID = (contactId) => {
@@ -62,25 +57,20 @@ const checkID = (contactId) => {
   }
 };
 
+// - - - SWITCHING BETWEEN CHATS - - -
 const switchChat = (number) => {
-  //first, I hide the active chat:
+  //First, hide the active chat:
   chatroom[activeChat - 1].classList.add("hidden");
 
-  //Second, I update the active chat:
+  //Second, remove the class "hidden":
   chatroom[number - 1].classList.remove("hidden");
 
-  //update the active chat:
+  //Last, update the active chat:
   activeChat = number;
 
-  console.log(`Changing chat to chat nº${number}`);
+  //Update the chat title:
+  chatname.innerHTML = contactNames[number - 1].innerHTML;
 };
-
-// //change visibility of chatroom:
-// const visibility = () => {
-//   for (let i = 0; i < chatroom.length; i++) {
-//     chatroom[i].classList = "hidden";
-//   }
-// };
 
 //getting the input
 submit.addEventListener("click", (e) => {
