@@ -7,7 +7,7 @@
 // FORM THINGS //
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
-const chatContainer = document.getElementById("chatroom");
+// const chatContainer = document.getElementById("chatroom");
 const chatroom = document.getElementsByClassName("chat-room");
 console.log(chatroom);
 
@@ -23,7 +23,8 @@ let activeChat = 1;
 // - - - - - ACTIONS - - - - - //
 
 // SET SCROLL BAR TO BOTTOM OF CHAT DIV
-var objDiv = document.getElementById("chatroom");
+//I need to add the id "chatroom" everytime I swtich between chats
+var objDiv = document.getElementById("visible");
 objDiv.scrollTop = objDiv.scrollHeight;
 
 //Get the ID of each contact:
@@ -51,8 +52,6 @@ const checkID = (contactId) => {
     // Check if contactID and chatID are the same.
     if (contactId === chatId) {
       switchChat(contactId);
-      // chatroom[i].classList.add("hidden");
-      // chatroom[contactId].classList.remove("hidden");
     }
   }
 };
@@ -64,6 +63,19 @@ const switchChat = (number) => {
 
   //Second, remove the class "hidden":
   chatroom[number - 1].classList.remove("hidden");
+
+  //Remove id="visible" from active chat:
+  chatroom[activeChat - 1].children[0].removeAttribute("id");
+
+  //Add id="visible" to the new chat room:
+  chatroom[number - 1].children[0].setAttribute("id", "visible");
+
+  // contactBackground();
+  contactCards[activeChat - 1].classList.remove("active");
+  contactCards[number - 1].classList.add("active");
+  //Update the objDiv variable to set the scroll to bottom:
+  objDiv = document.getElementById("visible");
+  objDiv.scrollTop = objDiv.scrollHeight;
 
   //Last, update the active chat:
   activeChat = number;
@@ -86,7 +98,9 @@ submit.addEventListener("click", (e) => {
 
 //creating messages!!
 const createMessage = (message) => {
+  //get the current chat:
   console.log(`I am creating a message...: ${message}`);
+  //create elements:
   let messageCard = document.createElement("DIV");
   messageCard.classList = "message-card align-right";
   let messageContainer = document.createElement("DIV");
@@ -94,15 +108,28 @@ const createMessage = (message) => {
   let newMessage = document.createElement("DIV");
   newMessage.classList = "message message-right";
   newMessage.innerHTML = message;
+  //append elements:
   messageCard.appendChild(messageContainer);
   messageContainer.appendChild(newMessage);
-  chatContainer.appendChild(messageCard);
+  chatroom[activeChat - 1].appendChild(messageCard);
   // Fix scroll bar down
   objDiv.scrollTop = objDiv.scrollHeight;
-  getResponse();
+  // getResponse();
 };
 
 //getting replies from the data object
-const getResponse = () => {
-  console.log(data[chatname.toLocaleLowerCase()]);
-};
+// const getResponse = () => {
+//   console.log(data[chatname.toLocaleLowerCase()]);
+// };
+
+//CHAT BACKGROUND COLORS ARRAY
+const colors = [
+  "#B3DAD8",
+  "#84D2D7",
+  "#B7D7C8",
+  "#77BD76",
+  "#F5E8AF",
+  "#E5E377",
+  "#F8D2AA",
+  "#171717",
+];

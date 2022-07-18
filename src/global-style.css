@@ -29,6 +29,14 @@ img {
   object-fit: cover;
 }
 
+/* - - - - - - - - - 
+ACTIVE CONTACT CARD 
+ - - - - - - - - - */
+
+.active {
+  background: rgb(68, 68, 250);
+}
+
 /* - - - - - 
 BORDER RADIUS
  - - - - - */

@@ -6,6 +6,7 @@
   width: 80%;
   height: 80%;
   min-width: 900px;
+  min-height: 600px;
   margin: 50px auto;
   background-color: rgb(235, 235, 235);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
