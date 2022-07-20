@@ -40,6 +40,10 @@ ACTIVE CONTACT CARD
 /* - - - - - 
 BORDER RADIUS
  - - - - - */
+
+.radius {
+  border-radius: 5px;
+}
 .top-left-radius {
   border-top-left-radius: 5px;
 }

@@ -16,6 +16,8 @@ let chatname = document.getElementById("chatname");
 const contactCards = document.getElementsByClassName("contact-card");
 const contactNames = document.getElementsByClassName("contact-name");
 console.log(contactNames[contactNames.length - 1].innerHTML);
+const chats = document.getElementsByClassName("chat");
+console.log(chats[0]);
 
 //set the active chat
 let activeChat = 1;
@@ -105,13 +107,16 @@ const createMessage = (message) => {
   messageCard.classList = "message-card align-right";
   let messageContainer = document.createElement("DIV");
   messageContainer.classList = "message-container";
-  let newMessage = document.createElement("DIV");
+  let div = document.createElement("DIV");
+  let newMessage = document.createElement("P");
   newMessage.classList = "message message-right";
   newMessage.innerHTML = message;
   //append elements:
   messageCard.appendChild(messageContainer);
-  messageContainer.appendChild(newMessage);
-  chatroom[activeChat - 1].appendChild(messageCard);
+  messageContainer.appendChild(div);
+  div.appendChild(newMessage);
+  //apend everything in the chat element!!
+  chats[activeChat - 1].appendChild(messageCard);
   // Fix scroll bar down
   objDiv.scrollTop = objDiv.scrollHeight;
   // getResponse();
