@@ -1,0 +1,102 @@
+/* OVERLAY STYLES */
+/* 
+There are two overlays: the one for the profile (.settings) and other in the room chat (.overlay)
+They have the same styles, so I put them together to avoid writting the same code twice. 
+
+*/
+.menu {
+  position: relative;
+  padding: 15px 0px 15px 10px;
+  font-size: 20px;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+
+/* CHAT ROOM OVERLAY */
+.options {
+  position: relative;
+}
+
+.settings,
+.overlay {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+}
+
+.menu:hover .settings,
+.options:hover .overlay {
+  display: block;
+}
+
+.settings li,
+.overlay li {
+  display: block;
+  font-size: 16px;
+  color: grey;
+  background: #dfdfdf;
+  text-align: center;
+  border-bottom: 0.3px solid grey;
+  width: 160px;
+  padding: 15px 8px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.settings li:first-child,
+.overlay li:first-child {
+  border-radius: 3px 3px 0px 0px;
+}
+
+.settings li:last-child,
+.overlay li:last-child {
+  border-radius: 0px 0px 3px 3px;
+  border-bottom: none;
+}
+
+.settings li:hover,
+.overlay li:hover {
+  color: #000;
+  background: #d7d6d6;
+}
+
+#changeColor {
+  display: relative;
+}
+
+.colors {
+  display: flex;
+}
+
+.colors li {
+  padding: 20px 0px !important;
+  background: white !important;
+  display: inline !important;
+}
+.colors div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.blue {
+  background: blue;
+}
+
+.green {
+  background: green;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.pink {
+  background: lightpink;
+}
+
+.grey {
+  background: grey;
+}

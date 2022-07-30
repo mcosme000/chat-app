@@ -9,15 +9,14 @@ const input = document.getElementById("input");
 const submit = document.getElementById("submit");
 // const chatContainer = document.getElementById("chatroom");
 const chatroom = document.getElementsByClassName("chat-room");
-console.log(chatroom);
 
 // OTHER ELEMENTS //
 let chatname = document.getElementById("chatname");
 const contactCards = document.getElementsByClassName("contact-card");
 const contactNames = document.getElementsByClassName("contact-name");
-console.log(contactNames[contactNames.length - 1].innerHTML);
+const lastMessages = document.getElementsByClassName("last-message");
+console.log(lastMessages[0].innerHTML);
 const chats = document.getElementsByClassName("chat");
-console.log(chats[0]);
 
 //set the active chat
 let activeChat = 1;
@@ -33,11 +32,11 @@ objDiv.scrollTop = objDiv.scrollHeight;
 for (let i = 0; i < contactCards.length; i++) {
   contactCards[i].addEventListener("click", () => {
     let contactId = contactCards[i].getAttribute("id");
-    console.log(`Contact ID: ${contactId}`);
+    // console.log(`Contact ID: ${contactId}`);
     checkID(contactId);
     //hasta aquí bien!!
     // get the contact name:
-    console.log(contactCards[i]);
+    // console.log(contactCards[i]);
     //
   });
 }
@@ -98,6 +97,12 @@ submit.addEventListener("click", (e) => {
   }
 });
 
+//Updating the last message on contact card
+const updateLastMessage = (message) => {
+  console.log(`updating message... ${message}`);
+  lastMessages[activeChat - 1].innerHTML = message;
+};
+
 //creating messages!!
 const createMessage = (message) => {
   //get the current chat:
@@ -120,6 +125,7 @@ const createMessage = (message) => {
   // Fix scroll bar down
   objDiv.scrollTop = objDiv.scrollHeight;
   // getResponse();
+  updateLastMessage(message);
 };
 
 //getting replies from the data object

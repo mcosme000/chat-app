@@ -16,47 +16,6 @@
 @import "./src/form.css";
 @import "./src/overlay-style.css";
 
-/* - - - LIST OVERLAY - - - */
-
-.options {
-  position: relative;
-}
-
-.overlay {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 100%;
-}
-
-.overlay li {
-  display: block;
-  font-size: 16px;
-  background: #dfdfdf;
-  text-align: center;
-  border-bottom: 0.3px solid grey;
-  width: 160px;
-  padding: 15px 8px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.overlay li:first-child {
-  border-radius: 3px 3px 0px 0px;
-}
-.overlay li:last-child {
-  border-bottom: none;
-  border-radius: 0px 0px 3px 3px;
-}
-
-.overlay li:hover {
-  background: #d7d6d6;
-  color: #000;
-}
-
-.options:hover .overlay {
-  display: block;
-}
-
 /* - - - ACTIVE & HIDDEN CHATS - - - */
 .hidden {
   display: none;
