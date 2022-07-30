@@ -7,7 +7,6 @@
 // FORM THINGS //
 const input = document.getElementById("input");
 const submit = document.getElementById("submit");
-// const chatContainer = document.getElementById("chatroom");
 const chatroom = document.getElementsByClassName("chat-room");
 
 // OTHER ELEMENTS //
@@ -17,6 +16,8 @@ const contactNames = document.getElementsByClassName("contact-name");
 const lastMessages = document.getElementsByClassName("last-message");
 console.log(lastMessages[0].innerHTML);
 const chats = document.getElementsByClassName("chat");
+const colors = document.getElementsByClassName("colors")[0].children;
+console.log(colors);
 
 //set the active chat
 let activeChat = 1;
@@ -32,9 +33,7 @@ objDiv.scrollTop = objDiv.scrollHeight;
 for (let i = 0; i < contactCards.length; i++) {
   contactCards[i].addEventListener("click", () => {
     let contactId = contactCards[i].getAttribute("id");
-    // console.log(`Contact ID: ${contactId}`);
     checkID(contactId);
-    //hasta aquí bien!!
     // get the contact name:
     // console.log(contactCards[i]);
     //
@@ -88,7 +87,6 @@ const switchChat = (number) => {
 //getting the input
 submit.addEventListener("click", (e) => {
   e.preventDefault();
-  // console.log(input.value);
   let message = input.value;
   // check if the input is empty to prevent sending empty messages
   if (message.trim().length !== 0) {
@@ -128,19 +126,22 @@ const createMessage = (message) => {
   updateLastMessage(message);
 };
 
+//CHANGE BACKGROUND COLOR
+const changeBackground = (color) => {
+  console.log(color);
+  chatroom[activeChat - 1].style.backgroundColor = color;
+};
+
+for (let i = 0; i < colors.length; i++) {
+  colors[i].addEventListener("click", () => {
+    const colorsArr = ["#ccf6ff", "#ade4a2", "#FCCA79", "#ffd6e2", "#efefef"];
+    console.log(colors[i]);
+    console.log(colorsArr[i]);
+    changeBackground(colorsArr[i]);
+  });
+}
+
 //getting replies from the data object
 // const getResponse = () => {
 //   console.log(data[chatname.toLocaleLowerCase()]);
 // };
-
-//CHAT BACKGROUND COLORS ARRAY
-const colors = [
-  "#B3DAD8",
-  "#84D2D7",
-  "#B7D7C8",
-  "#77BD76",
-  "#F5E8AF",
-  "#E5E377",
-  "#F8D2AA",
-  "#171717",
-];

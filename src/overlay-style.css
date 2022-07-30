@@ -62,19 +62,28 @@ They have the same styles, so I put them together to avoid writting the same cod
   background: #d7d6d6;
 }
 
+.overlay li {
+  margin: 0;
+}
+
 #changeColor {
-  display: relative;
+  position: relative;
 }
 
 .colors {
+  padding: 15px 8px;
+  width: 100%;
+  position: absolute;
+  bottom: 10;
   display: flex;
+  justify-content: space-between;
+  background: #dfdfdf;
 }
 
-.colors li {
-  padding: 20px 0px !important;
-  background: white !important;
-  display: inline !important;
-}
+/* #changeColor:hover .colors {
+  display: flex;
+} */
+
 .colors div {
   width: 20px;
   height: 20px;
@@ -82,21 +91,21 @@ They have the same styles, so I put them together to avoid writting the same cod
 }
 
 .blue {
-  background: blue;
+  background: #97cad5;
 }
 
 .green {
-  background: green;
+  background: #ade4a2;
 }
 
 .yellow {
-  background: yellow;
+  background: #ffe6b8;
 }
 
 .pink {
-  background: lightpink;
+  background: #ffd6e2;
 }
 
 .grey {
-  background: grey;
+  background: #efefef;
 }
