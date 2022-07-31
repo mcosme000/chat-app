@@ -134,7 +134,7 @@ const changeBackground = (color) => {
 
 for (let i = 0; i < colors.length; i++) {
   colors[i].addEventListener("click", () => {
-    const colorsArr = ["#ccf6ff", "#ade4a2", "#FCCA79", "#ffd6e2", "#efefef"];
+    const colorsArr = ["#D6D6FF", "#DBFFDB", "#FFFCBC", "#FFE7E7", "#efefef"];
     console.log(colors[i]);
     console.log(colorsArr[i]);
     changeBackground(colorsArr[i]);
