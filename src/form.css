@@ -8,27 +8,29 @@
 
 input[type="text"] {
   font-family: "Albert Sans", sans-serif;
-  width: 85%;
+  width: 76%;
   border: none;
   padding: 5px;
   font-size: 16px;
 }
 
+.chat-form i {
+  padding: 5px;
+}
 .submit-btn {
   padding: 10px 20px;
   border: none;
   background: #fff;
 }
 
-.submit-btn i {
+.submit-btn i,
+.chat-form i {
   font-size: 25px;
   color: grey;
 }
 
-.submit-btn:hover {
+.submit-btn:hover,
+.chat-form i:hover {
   cursor: pointer;
-}
-
-.submit-btn:hover i {
   color: rgb(60, 60, 226);
 }
