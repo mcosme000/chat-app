@@ -1,8 +1,11 @@
 "use strict";
 
-// IMPORT DATA FROM EXTERNAL JS FILE//
-// import data from "./data.js";
-// console.log(data);
+//IMPORT DATA FROM EXTERNAL JS FILE
+import data from "./data.js";
+console.log(data);
+
+//set the active chat
+let activeChat = 1;
 
 // FORM THINGS //
 const input = document.getElementById("input");
@@ -14,29 +17,24 @@ let chatname = document.getElementById("chatname");
 const contactCards = document.getElementsByClassName("contact-card");
 const contactNames = document.getElementsByClassName("contact-name");
 const lastMessages = document.getElementsByClassName("last-message");
-console.log(lastMessages[0].innerHTML);
 const chats = document.getElementsByClassName("chat");
 const colors = document.getElementsByClassName("colors")[0].children;
-console.log(colors);
-
-//set the active chat
-let activeChat = 1;
 
 // - - - - - ACTIONS - - - - - //
 
 // SET SCROLL BAR TO BOTTOM OF CHAT DIV
-//I need to add the id "chatroom" everytime I swtich between chats
-var objDiv = document.getElementById("visible");
-objDiv.scrollTop = objDiv.scrollHeight;
+//I need to add the id "visible" everytime I swtich between chats
+let objDiv = document.getElementById("visible");
+
+const scrollDown = () => {
+  objDiv.scrollTop = objDiv.scrollHeight;
+};
 
 //Get the ID of each contact:
 for (let i = 0; i < contactCards.length; i++) {
   contactCards[i].addEventListener("click", () => {
     let contactId = contactCards[i].getAttribute("id");
     checkID(contactId);
-    // get the contact name:
-    // console.log(contactCards[i]);
-    //
   });
 }
 
@@ -81,7 +79,7 @@ const switchChat = (number) => {
   activeChat = number;
 
   //Update the chat title:
-  chatname.innerHTML = contactNames[number - 1].innerHTML;
+  chatname.innerHTML = contactNames[activeChat - 1].innerHTML;
 };
 
 //getting the input
@@ -99,6 +97,22 @@ submit.addEventListener("click", (e) => {
 const updateLastMessage = (message) => {
   console.log(`updating message... ${message}`);
   lastMessages[activeChat - 1].innerHTML = message;
+};
+
+//get reply message:
+
+//set timeout function depending on chat:
+const setDelay = () => {
+  let chatTitle = contactNames[activeChat - 1].innerHTML.toLocaleLowerCase();
+  let delay = data[chatTitle].delay;
+  setTimeout(function () {
+    console.log(`I am ${chatTitle} and I'm sending a meesage with ${delay}`);
+    getReplyMessage();
+  }, delay);
+};
+
+const getReplyMessage = () => {
+  console.log("REply message incomingggg");
 };
 
 //creating messages!!
@@ -121,22 +135,20 @@ const createMessage = (message) => {
   //apend everything in the chat element!!
   chats[activeChat - 1].appendChild(messageCard);
   // Fix scroll bar down
-  objDiv.scrollTop = objDiv.scrollHeight;
+  scrollDown();
   // getResponse();
   updateLastMessage(message);
+  setDelay();
 };
 
 //CHANGE BACKGROUND COLOR
 const changeBackground = (color) => {
-  console.log(color);
   chatroom[activeChat - 1].style.backgroundColor = color;
 };
 
 for (let i = 0; i < colors.length; i++) {
   colors[i].addEventListener("click", () => {
     const colorsArr = ["#D6D6FF", "#DBFFDB", "#FFFCBC", "#FFE7E7", "#efefef"];
-    console.log(colors[i]);
-    console.log(colorsArr[i]);
     changeBackground(colorsArr[i]);
   });
 }
@@ -145,3 +157,5 @@ for (let i = 0; i < colors.length; i++) {
 // const getResponse = () => {
 //   console.log(data[chatname.toLocaleLowerCase()]);
 // };
+
+scrollDown();

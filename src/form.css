@@ -4,11 +4,12 @@
   background: #fff;
   padding: 20px 30px;
   border-top: 0.3px solid black;
+  position: relative;
 }
 
 input[type="text"] {
   font-family: "Albert Sans", sans-serif;
-  width: 76%;
+  width: 70%;
   border: none;
   padding: 5px;
   font-size: 16px;
@@ -33,4 +34,42 @@ input[type="text"] {
 .chat-form i:hover {
   cursor: pointer;
   color: rgb(60, 60, 226);
+}
+
+/* - - - PHOTO UPLOAD OVERLAY - - - */
+
+.photo-upload {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  right: 70%;
+}
+
+.photo-overlay {
+  display: relative;
+  padding: 10px;
+  border-radius: 5px;
+  background: rgb(243, 243, 243);
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.photo-upload::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: rgb(243, 243, 243);
+  transform: rotate(45deg);
+  position: absolute;
+  left: 44%;
+  top: 96%;
+}
+
+.photo-overlay img:hover {
+  cursor: pointer;
+}
+.photo-upload .photo-container {
+  width: 70px;
+  height: 70px;
 }

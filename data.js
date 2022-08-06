@@ -1,17 +1,20 @@
 const data = {
   mom: {
-    response: ["okay", "go go wan"],
+    delay: 500,
+    response: ["okay", "ok son", "I love you son"],
     answer: ["yes", "no", "yess"],
   },
 
   dad: {
-    response: ["ok", "okk"],
+    delay: 20000,
+    response: ["ok"],
     answer: ["yes", "no"],
   },
 
-  "best friend": {
+  "sister s.": {
+    delay: 800,
     response: ["ok", "okk"],
-    answer: ["yes", "no"],
+    answer: ["yes!!", "no"],
   },
 };
 export default data;
