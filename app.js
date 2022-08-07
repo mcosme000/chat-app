@@ -19,8 +19,16 @@ const contactNames = document.getElementsByClassName("contact-name");
 const lastMessages = document.getElementsByClassName("last-message");
 const chats = document.getElementsByClassName("chat");
 const colors = document.getElementsByClassName("colors")[0].children;
-
+const cameraIcon = document.getElementById("camera-icon");
+const photoOverlay = document.getElementById("photo-upload");
+const photoArray = document.getElementsByClassName("photo-container");
+const sendPhotoBtn = document.getElementById("send-photos");
 // - - - - - ACTIONS - - - - - //
+
+// SHOW / HIDE OVERLAY TO UPDLOAD PHOTOS
+cameraIcon.addEventListener("click", () => {
+  photoOverlay.classList.toggle("hidden");
+});
 
 // SET SCROLL BAR TO BOTTOM OF CHAT DIV
 //I need to add the id "visible" everytime I swtich between chats
@@ -56,6 +64,9 @@ const checkID = (contactId) => {
 
 // - - - SWITCHING BETWEEN CHATS - - -
 const switchChat = (number) => {
+  //hide the upload photo overlay:
+  photoOverlay.classList.add("hidden");
+
   //First, hide the active chat:
   chatroom[activeChat - 1].classList.add("hidden");
 
@@ -140,6 +151,59 @@ const createMessage = (message) => {
   updateLastMessage(message);
   setDelay();
 };
+
+//CREATE MESSAGE WITH PHOTOS TO SEND
+const sendPhotos = (arr) => {
+  console.log(`Sending photos: ${arr}`);
+};
+
+//GET UPLOAD PHOTOS FROM PHOTO ARRAY
+let sendPhotoArray = [];
+for (let i = 0; i < photoArray.length; i++) {
+  photoArray[i].addEventListener("click", () => {
+    console.log(photoArray[i]);
+    photoArray[i].children[0].classList.toggle("selected");
+    let photoId = photoArray[i].getAttribute("id");
+
+    if (sendPhotoArray.includes(photoId)) {
+      sendPhotoArray = sendPhotoArray.filter((photo) => {
+        return photo !== photoId;
+      });
+    } else {
+      sendPhotoArray.push(photoId);
+    }
+
+    if (sendPhotoArray.length === 0) {
+      sendPhotoBtn.disabled = true;
+      sendPhotoBtn.style.background = "#EBEBEB";
+    } else {
+      sendPhotoBtn.disabled = false;
+      sendPhotoBtn.style.background = "#3c3ce1";
+      sendPhotoBtn.style.color = "#fff";
+      sendPhotoBtn.style.cursor = "pointer";
+    }
+    console.log(sendPhotoArray);
+  });
+}
+
+sendPhotoBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (sendPhotoArray.length === 0) {
+    console.log("there are no photos to send");
+  } else {
+    for (let i = 0; i < photoArray.length; i++) {
+      if (photoArray[i].children[0].classList === "selected") {
+        console.log(photoArray[i].children[0]);
+        // photoArray[i].children[0].classList.toggle("selected");
+      }
+    }
+    sendPhotos(sendPhotoArray);
+
+    sendPhotoArray = [];
+    sendPhotoBtn.disabled = true;
+    sendPhotoBtn.style.background = "#EBEBEB";
+  }
+});
 
 //CHANGE BACKGROUND COLOR
 const changeBackground = (color) => {

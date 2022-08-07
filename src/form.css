@@ -39,23 +39,24 @@ input[type="text"] {
 /* - - - PHOTO UPLOAD OVERLAY - - - */
 
 .photo-upload {
-  display: none;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   bottom: 100%;
   right: 70%;
+  border-radius: 5px;
+  background: rgb(255, 255, 255);
+  padding: 10px;
 }
 
 .photo-overlay {
   display: relative;
-  padding: 10px;
-  border-radius: 5px;
-  background: rgb(243, 243, 243);
   display: grid;
   grid-gap: 5px;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-.photo-upload::before {
+.photo-overlay::after {
   content: "";
   width: 20px;
   height: 20px;
@@ -63,13 +64,31 @@ input[type="text"] {
   transform: rotate(45deg);
   position: absolute;
   left: 44%;
-  top: 96%;
+  top: 98%;
 }
 
 .photo-overlay img:hover {
   cursor: pointer;
 }
-.photo-upload .photo-container {
+
+.photo-container {
   width: 70px;
   height: 70px;
+  background: black;
+}
+
+.photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.selected {
+  border: 2px solid #3c3ce1;
+}
+
+#send-photos {
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 18px;
+  border: none;
 }
