@@ -155,22 +155,49 @@ const createMessage = (message) => {
 //CREATE MESSAGE WITH PHOTOS TO SEND
 const sendPhotos = (arr) => {
   console.log(`Sending photos: ${arr}`);
+  let messagePhoto = document.createElement("DIV");
+  messagePhoto.classList = "message-photo align-right padding-right grid";
+  //create img elements:
+  let photoImg;
+  for (let i = 0; i < arr.length; i++) {
+    photoImg = document.createElement("IMG");
+    photoImg.setAttribute("src", arr[i]);
+    messagePhoto.appendChild(photoImg);
+  }
+
+  if (arr.length === 1) {
+    photoImg.classList = "radius";
+  } else if (arr.length === 2) {
+    messagePhoto.children[0].classList.add("left-radius");
+    messagePhoto.children[1].classList.add("right-radius");
+    console.log(messagePhoto);
+  } else if (arr.length === 3) {
+    messagePhoto.classList.add("grid-3");
+    messagePhoto.children[0].classList.add("top-left-radius");
+    messagePhoto.children[1].classList.add("top-right-radius");
+    messagePhoto.children[2].classList.add("bottom-radius");
+  }
+  chats[activeChat - 1].appendChild(messagePhoto);
+
+  //set the grid layout depending on number of photos:
+
+  //fix scroll bar down:
+  scrollDown();
 };
 
 //GET UPLOAD PHOTOS FROM PHOTO ARRAY
 let sendPhotoArray = [];
 for (let i = 0; i < photoArray.length; i++) {
   photoArray[i].addEventListener("click", () => {
-    console.log(photoArray[i]);
     photoArray[i].children[0].classList.toggle("selected");
-    let photoId = photoArray[i].getAttribute("id");
+    let photoAtt = photoArray[i].children[0].getAttribute("src");
 
-    if (sendPhotoArray.includes(photoId)) {
+    if (sendPhotoArray.includes(photoAtt)) {
       sendPhotoArray = sendPhotoArray.filter((photo) => {
-        return photo !== photoId;
+        return photo !== photoAtt;
       });
     } else {
-      sendPhotoArray.push(photoId);
+      sendPhotoArray.push(photoAtt);
     }
 
     if (sendPhotoArray.length === 0) {
@@ -187,21 +214,24 @@ for (let i = 0; i < photoArray.length; i++) {
 }
 
 sendPhotoBtn.addEventListener("click", (e) => {
+  for (let i = 0; i < photoArray.length; i++) {
+    if (photoArray[i].children[0].classList.contains("selected")) {
+      console.log(photoArray[i].children[0].classList.toggle("selected"));
+    }
+  }
   e.preventDefault();
+  console.log(photoArray.length);
   if (sendPhotoArray.length === 0) {
     console.log("there are no photos to send");
   } else {
-    for (let i = 0; i < photoArray.length; i++) {
-      if (photoArray[i].children[0].classList === "selected") {
-        console.log(photoArray[i].children[0]);
-        // photoArray[i].children[0].classList.toggle("selected");
-      }
-    }
     sendPhotos(sendPhotoArray);
-
+    //format the array
     sendPhotoArray = [];
+
+    //default settings
     sendPhotoBtn.disabled = true;
     sendPhotoBtn.style.background = "#EBEBEB";
+    photoOverlay.classList.toggle("hidden");
   }
 });
 

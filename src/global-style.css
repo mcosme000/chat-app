@@ -63,3 +63,15 @@ BORDER RADIUS
 .bottom-radius {
   border-radius: 0px 0px 5px 5px;
 }
+
+.left-radius {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.right-radius {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.padding-right {
+  padding-right: 10px !important;
+}
