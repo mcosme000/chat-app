@@ -44,33 +44,6 @@ BORDER RADIUS
 .radius {
   border-radius: 5px;
 }
-.top-left-radius {
-  border-top-left-radius: 5px;
-}
-
-.top-right-radius {
-  border-top-right-radius: 5px;
-}
-
-.bottom-left-radius {
-  border-bottom-left-radius: 5px;
-}
-
-.bottom-right-radius {
-  border-bottom-right-radius: 5px;
-}
-
-.bottom-radius {
-  border-radius: 0px 0px 5px 5px;
-}
-
-.left-radius {
-  border-radius: 5px 0px 0px 5px;
-}
-
-.right-radius {
-  border-radius: 0px 5px 5px 0px;
-}
 
 .padding-right {
   padding-right: 10px !important;

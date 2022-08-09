@@ -155,8 +155,10 @@ const createMessage = (message) => {
 //CREATE MESSAGE WITH PHOTOS TO SEND
 const sendPhotos = (arr) => {
   console.log(`Sending photos: ${arr}`);
+  let messageContainer = document.createElement("DIV");
+  messageContainer.classList = "message-photo align-right padding-right";
   let messagePhoto = document.createElement("DIV");
-  messagePhoto.classList = "message-photo align-right padding-right grid";
+  messagePhoto.classList = "grid";
   //create img elements:
   let photoImg;
   for (let i = 0; i < arr.length; i++) {
@@ -167,17 +169,13 @@ const sendPhotos = (arr) => {
 
   if (arr.length === 1) {
     photoImg.classList = "radius";
-  } else if (arr.length === 2) {
-    messagePhoto.children[0].classList.add("left-radius");
-    messagePhoto.children[1].classList.add("right-radius");
-    console.log(messagePhoto);
-  } else if (arr.length === 3) {
+    messagePhoto.classList.remove("grid");
+  } else if (arr.length % 2 !== 0) {
     messagePhoto.classList.add("grid-3");
-    messagePhoto.children[0].classList.add("top-left-radius");
-    messagePhoto.children[1].classList.add("top-right-radius");
-    messagePhoto.children[2].classList.add("bottom-radius");
   }
-  chats[activeChat - 1].appendChild(messagePhoto);
+
+  messageContainer.appendChild(messagePhoto);
+  chats[activeChat - 1].appendChild(messageContainer);
 
   //set the grid layout depending on number of photos:
 
